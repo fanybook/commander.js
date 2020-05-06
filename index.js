@@ -1530,7 +1530,7 @@ class Command extends EventEmitter {
         return passthru;
       };
     }
-    const cbOutput = cb(this.helpInformation());
+    const cbOutput = cb(this.helpInformation(), this);
     if (typeof cbOutput !== 'string' && !Buffer.isBuffer(cbOutput)) {
       throw new Error('outputHelp callback must return a string or a Buffer');
     }
